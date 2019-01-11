@@ -1,0 +1,334 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.mainbackground {
+
+  width: 100%;
+  height: 100%;
+  background: rgba(228, 232, 240, 1);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.mainheaddiv {
+  position: absolute;
+  width: 100%;
+  height: 31%;
+  overflow: hidden;
+  background: rgba(77, 123, 243, 1);
+  background-size: 100% 100%;
+
+}
+
+.mainbodydiv {
+  position: relative;
+  margin-top: 1px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mainheadimg {
+  position: relative;
+  top: 0px;
+}
+
+.titleText {
+  position: absolute;
+  width: 16%;
+  height: 50px;
+  font-size: 36px;
+  text-align: center;
+  font-family: MicrosoftYaHei;
+  color: #FFFEFE;
+  margin-left: 42%;
+  margin-right: 42%;
+  margin-top: 62px;
+
+}
+
+.item1 {
+  width: 100%;
+  height: 30px;
+
+}
+
+.account {
+  position: relative;
+  width: 90%;
+  height: 210px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: rgba(255, 255, 255, 1);
+  /*  margin-top: 696px;*/
+  border-radius: 10px;
+}
+
+.parameter {
+  position: relative;
+  width: 90%;
+  height: 420px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: rgba(255, 255, 255, 1);
+  margin-top: 47px;
+  border-radius: 10px;
+}
+
+.paymentbutton {
+  position: relative;
+  width: 90%;
+  height: 90px;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: rgba(77, 123, 243, 1);
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+.paymentbuttontext {
+  line-height: 90px;
+  text-align: center;
+  font-size: 34px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+}
+
+.accountTitle {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 31px;
+}
+
+.accountText {
+  position: absolute;
+  width: 45%;
+  height: 100%;
+  font-size: 34px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  display: inline;
+  text-align: left;
+  line-height: 60px;
+  margin-left: 5%;
+}
+
+.accountSwatch {
+  position: absolute;
+  margin-left: 50%;
+  margin-right: 5%;
+  width: 45%;
+  height: 100%;
+  display: inline;
+  text-align: right;
+  line-height: 60px;
+}
+
+.accountSwatchImg {
+  width: 91px;
+  height: 48px;
+  text-align: right;
+  line-height: 48px;
+}
+
+.accountLine {
+  position: absolute;
+  margin-top: 87px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: rgba(234, 238, 244, 1);
+  size: 2;
+}
+
+.accountValue {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  margin-top: 109px;
+}
+
+.accountValueInput {
+  width: 90%;
+  height: 80px;
+  border: 2px solid rgba(220, 226, 237, 1);
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 40px;
+}
+
+.accountValueInputDisable {
+  background: rgba(239, 242, 247, 1);
+}
+
+.parameterTitle {
+  position: absolute;
+  width: 95%;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 31px;
+  font-size: 34px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  margin-left: 5%;
+}
+
+.parameterValue {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 93px;
+  text-align: center;
+}
+
+.trxValue {
+  width: 103px;
+  height: 38px;
+  font-size: 48px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(77, 123, 243, 1);
+}
+
+.trxUnit {
+  width: 39px;
+  height: 22px;
+  font-size: 28px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(134, 142, 165, 1);
+}
+
+.trxDays {
+  width: 48px;
+  height: 38px;
+  font-size: 48px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(77, 123, 243, 1);
+}
+
+.trxDay {
+  width: 25px;
+  height: 24px;
+  font-size: 28px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(134, 142, 165, 1);
+}
+
+.trxUnitSeparate {
+  width: 2px;
+  height: 60px;
+  font-size: 40px;
+  font-family: Adobe Heiti Std R;
+  font-weight: normal;
+  color: rgba(134, 142, 165, 1);
+}
+
+.energyValueDiv {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 154px;
+  text-align: center;
+}
+
+.energyValue {
+  width: 690px;
+  height: 420px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+}
+
+
+.trxSlider {
+  position: absolute;
+  height: 40px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.slider-handle {
+  background: url('../img/slider.png') no-repeat center center;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  border-radius: 50%;
+}
+
+.slider-tip {
+  font-size: 30px;
+  top: -40px;
+}
+
+.trxSliderLimit{
+  height: 30px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 50px;
+  text-align: center;
+  font-size:24px;
+  font-family:Adobe Heiti Std R;
+  font-weight:normal;
+  color:rgba(102,102,102,1);
+}
+
+.trxSliderMin{
+  height:40px;
+  line-height: 40px;
+  float:left;
+}
+.trxSliderMax{
+  height:40px;
+  line-height: 40px;
+  float:right
+}
+
+.daysSlider{
+  position: absolute;
+  height: 40px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 50px;
+  text-align: center;
+}
+.daysSliderLimit{
+  height: 30px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 70px;
+  text-align: center;
+  font-size:24px;
+  font-family:Adobe Heiti Std R;
+  font-weight:normal;
+  color:rgba(102,102,102,1);
+}
+
+.daysSliderMin{
+  height:40px;
+  line-height: 40px;
+  float:left;
+}
+.daysSliderMax{
+  height:40px;
+  line-height: 40px;
+  float:right;
+}

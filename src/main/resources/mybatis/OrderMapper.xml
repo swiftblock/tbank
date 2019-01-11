@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mappers.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.swiftchain.dao.OrderDao">
+    <!-- Result Map -->
+    <resultMap id="baseResultMap" type="cn.swiftchain.dao.po.OrderPO">
+        <result column="order_no" property="orderNo"/>
+        <result column="user_address" property="userAddress"/>
+        <result column="resource_type" property="resourceType"/>
+        <result column="resource_amount" property="resourceAmount"/>
+        <result column="freeze_amount" property="freezeAmount"/>
+        <result column="freeze_interval" property="freezeInterval"/>
+        <result column="freeze_msg" property="freezeMsg"/>
+        <result column="fee" property="fee"/>
+        <result column="fee_rate" property="feeRate"/>
+        <result column="status" property="status"/>
+        <result column="tx_hash" property="txHash"/>
+        <result column="raw_tx" property="rawTx"/>
+        <result column="currency" property="currency"/>
+        <result column="pay_amount" property="payAmount"/>
+        <result column="pay_block_time" property="payBlockTime"/>
+        <result column="offer_no" property="offerNo"/>
+        <result column="resource_tx_hash" property="resourceTxHash"/>
+        <result column="freeze_id" property="freezeId"/>
+        <result column="refund_tx_hash" property="refundTxHash"/>
+        <result column="gmt_create" property="gmtCreate"/>
+    </resultMap>
+    <!-- order table all fields -->
+    <sql id="baseColumnList">
+		order_no,user_address,resource_type,resource_amount,freeze_amount,freeze_interval,freeze_msg,fee,fee_rate,status,tx_hash,raw_tx,currency,pay_amount,pay_block_time,offer_no,resource_tx_hash,freeze_id,refund_tx_hash,gmt_create
+	</sql>
+    <!-- 查询条件 -->
+    <sql id="baseWhereClause">
+        where 1=1
+        <trim suffixOverrides=",">
+            <if test="orderNo != null">
+                and order_no=#{orderNo}
+            </if>
+            <if test="userAddress != null and userAddress != ''">
+                and user_address=#{userAddress}
+            </if>
+            <if test="resourceType != null and resourceType != ''">
+                and resource_type=#{resourceType}
+            </if>
+            <if test="resourceAmount != null">
+                and resource_amount=#{resourceAmount}
+            </if>
+            <if test="freezeAmount != null">
+                and freeze_amount=#{freezeAmount}
+            </if>
+            <if test="freezeInterval != null">
+                and freeze_interval=#{freezeInterval}
+            </if>
+            <if test="freeze_msg != null">
+                and freeze_msg=#{freezeMsg}
+            </if>
+            <if test="fee != null">
+                and fee=#{fee}
+            </if>
+            <if test="fee_rate != null">
+                and fee_rate=#{feeRate}
+            </if>
+            <if test="status != null and status != ''">
+                and status=#{status}
+            </if>
+            <if test="txHash != null and txHash != ''">
+                and tx_hash=#{txHash}
+            </if>
+            <if test="rawTx != null">
+                and raw_tx=#{rawTx}
+            </if>
+            <if test="currency != null and currency != ''">
+                and currency=#{currency}
+            </if>
+            <if test="payAmount != null">
+                and pay_amount=#{payAmount}
+            </if>
+            <if test="payBlockTime != null">
+                and pay_block_time=#{payBlockTime}
+            </if>
+            <if test="offerNo != null and offerNo != ''">
+                and offer_no=#{offerNo}
+            </if>
+            <if test="resourceTxHash != null and resourceTxHash != ''">
+                and resource_tx_hash=#{resourceTxHash}
+            </if>
+            <if test="freezeId != null and freezeId != ''">
+                and freeze_id=#{freezeId}
+            </if>
+            <if test="refundTxHash != null and refundTxHash != ''">
+                and refund_tx_hash=#{refundTxHash}
+            </if>
+            <if test="gmtCreate != null">
+                and gmt_create=#{gmtCreate}
+            </if>
+        </trim>
+    </sql>
+    <!-- 插入记录 -->
+    <insert id="add" parameterType="Object">
+		insert into
+		`order`(order_no,user_address,resource_type,resource_amount,freeze_amount,freeze_interval,freeze_msg,fee,fee_rate,status,tx_hash,raw_tx,currency,pay_amount,pay_block_time,offer_no,resource_tx_hash,freeze_id,refund_tx_hash,gmt_create)
+		values(#{orderNo},#{userAddress},#{resourceType},#{resourceAmount},#{freezeAmount},#{freezeInterval},#{freezeMsg},#{fee},#{feeRate},#{status},#{txHash},#{rawTx},#{currency},#{payAmount},#{payBlockTime},#{offerNo},#{resourceTxHash},#{freezeId},#{refundTxHash},#{gmtCreate})
+	</insert>
+    <!-- 删除记录 -->
+    <delete id="delete" parameterType="Object">
+		delete from order where
+		order_no=#{orderNo}
+	</delete>
+    <!-- 根据id查询 -->
+    <select id="queryById" resultMap="baseResultMap" parameterType="Object">
+        select
+        <include refid="baseColumnList"/>
+        from `order` where order_no=#{orderNo}
+    </select>
+    <!-- 列表总数 -->
+    <select id="queryByCount" resultType="java.lang.Integer"
+            parameterType="Object">
+        select count(1) from `order`
+        <include refid="baseWhereClause"/>
+    </select>
+    <!-- 查询列表 -->
+    <select id="queryByList" resultMap="baseResultMap"
+            parameterType="Object">
+        select
+        <include refid="baseColumnList"/>
+        from `order`
+        <include refid="baseWhereClause"/>
+    </select>
+    <!-- 以上为工具自动生成 -->
+
+    <select id="queryByAddrAndStatus" resultMap="baseResultMap" parameterType="Object">
+        select
+        <include refid="baseColumnList"/>
+        from `order`
+        where user_address = '${userAddress}'
+        and status in
+        <foreach collection="statusSet" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        <if test="startOrderNo != null and startOrderNo != ''">
+            and  #{startOrderNo} > order_no
+        </if>
+        order by order_no desc
+        limit ${count}
+    </select>
+
+    <select id="queryByStatus" resultMap="baseResultMap" parameterType="Object">
+        select
+        <include refid="baseColumnList"/>
+        from `order`
+        where status in
+        <foreach collection="statusSet" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        <if test="startOrderNo != null and startOrderNo != ''">
+            and order_no > #{startOrderNo}
+        </if>
+        order by gmt_create asc
+        limit ${count}
+    </select>
+
+    <update id="updateStatus" parameterType="object">
+        update `order` set status=#{to}
+        where order_no = #{orderNo} and status=#{from}
+    </update>
+
+    <update id="updateInfo" parameterType="object">
+        update `order`
+        set
+        <if test="resourceTxHash != null and resourceTxHash != ''">
+            resource_tx_hash = #{resourceTxHash},
+        </if>
+        <if test="freezeId != null and freezeId != ''">
+            freeze_id = #{freezeId},
+        </if>
+        <if test="freezeMsg != null and freezeMsg != ''">
+            freeze_msg = #{freezeMsg},
+        </if>
+        <if test="refundTxHash != null and refundTxHash != ''">
+            refund_tx_hash = #{refundTxHash},
+        </if>
+            status=#{to}
+        where order_no = #{orderNo} and status=#{from}
+    </update>
+
+    <!-- 根据id查询 -->
+    <select id="queryByTxHash" resultMap="baseResultMap" parameterType="Object">
+        select
+        <include refid="baseColumnList"/>
+        from `order` where tx_hash=#{txHash}
+    </select>
+
+</mapper>

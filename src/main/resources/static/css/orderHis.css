@@ -1,0 +1,377 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.mainbackground {
+  width: 100%;
+  height: 100%;
+  background: rgba(228, 232, 240, 1);
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.headPhoto{
+  width: 100%;
+  height: 207px;
+  background-image:url(../img/topbg2@2x.png) ;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  margin: -10px -20px -10px -4px;
+  padding-top:4.7%;
+  position: relative;
+}
+.returnPrePage{
+  width:60px;
+  font-size: 36px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(255,254,254,1);
+  margin-left: 40px;
+}
+
+.Title{
+  font-size: 36px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(255,254,254,1);
+  /*border:1px solid red;*/
+  text-align: center;
+  width: 16.1%;
+  margin-left:42%;
+  margin-bottom:4.1%;
+  margin-top: -50px;
+
+}
+
+.helpImp{
+  width: 32px;
+  height: 32px;
+  line-height: 50px;
+  position: absolute;
+}
+.helpText{
+  margin-left: 40px;
+}
+
+.howUse{
+  font-size:26px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(255,254,254,1);
+  /*border:1px solid red;*/
+  width:11%;
+  margin-left: 11%;
+  display:inline;
+  height: 50px;
+}
+.record{
+  font-size:26px;
+  font-family:MicrosoftYaHei;
+  font-weight:400;
+  color:rgba(255,254,254,1);
+  /*border:1px solid red;*/
+  width:11%;
+  margin-left: 57.6%;
+  display:inline;
+
+}
+.orderStatus{
+  position: absolute;
+  width: 80%;
+  height: 60px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 20px;
+
+}
+
+.statusTab{
+  color:rgba(255,254,254,1)!important;
+}
+
+.statusAll{
+  position: absolute;
+  width: 33%;
+  height: 60px;
+  display: inline;
+  text-align: center;
+  font-size:30px;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(176,191,232,1);
+}
+.statusPayment{
+  position: absolute;
+  width: 34%;
+  height: 60px;
+  display: inline;
+  text-align: center;
+  font-size:30px;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(176,191,232,1);
+  margin-left: 33%;
+}
+.statusPaid{
+  position: absolute;
+  width: 33%;
+  height: 60px;
+  display: inline;
+  text-align: center;
+  font-size:30px;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(176,191,232,1);
+  margin-left: 67%;
+}
+
+.recodBodyDiv {
+  position: relative;
+  margin-top: 1px;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.recordItem {
+  position: relative;
+  width: 90%;
+  height: 320px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background: rgba(255, 255, 255, 1);
+  margin-top: 47px;
+  border-radius: 10px;
+}
+.offerInfo{
+  position: absolute;
+  width: 90%;
+  height: 120px;
+  margin-left: 5%;
+  margin-right: 5%;
+  background:rgba(241,243,248,1);
+  margin-top: 17px;
+}
+.trxOffer{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+}
+.trxOfferText{
+  position: absolute;
+  width: 50%;
+  height: 40px;
+  display: inline;
+  text-align: left;
+  font-size:36px;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(34,34,34,1);
+  margin-top: 10px;
+  margin-left: 31px;
+}
+.trxOfferStatus{
+  position: absolute;
+  width: 45%;
+  height: 40px;
+  display: inline;
+  text-align: right;
+  font-size:24px;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(77,123,243,1);
+  margin-left: 50%;
+  margin-top: 30px;
+}
+.trxPrice{
+  position: absolute;
+  width: 92%;
+  height: 30px;
+
+  text-align: right;
+  margin-left: 31px;
+  font-size:24px;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(77,123,243,1);
+  margin-top: 60px;
+}
+.energy{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  font-size:24px;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(199,159,121,1);
+  margin-top: 70px;
+  margin-left: 31px;
+}
+.offerOther{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  text-align: left;
+  font-size:30px;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  margin-top: 150px;
+  margin-left: 43px;
+}
+.offerOtherAddress{
+  position: absolute;
+  width: 75%;
+  font-size:30px;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+  display:-moz-inline-box;
+  display:inline-block;
+  word-wrap: break-word;
+}
+.offerOtherDate{
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  text-align: left;
+  font-size:24px;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(134,142,165,1);
+  margin-top: 200px;
+  margin-left: 43px;
+}
+.operationButton{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  text-align: right;
+  margin-top: 240px;
+
+}
+.delButton{
+
+  width:150px;
+  height:60px;
+  border:2px solid rgba(77,123,243,1);
+  border-radius:10px;
+  font-size:32px;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(77,123,243,1);
+  text-align: center;
+  line-height: 60px;
+  display: inline-block;
+  margin-right: 20px;
+}
+.payButton{
+  width:150px;
+  height:60px;
+  background:rgba(45,215,210,1);
+  border-radius:10px;
+  font-size:32px;
+  font-family:PingFangSC-Medium;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 60px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+.popup {
+  margin: 0px 0px 0px -6px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 1);
+  opacity: 0.4;
+  position: absolute;
+  z-index: 1;
+}
+
+.prompt {
+  width: 86%;
+  margin-left: 6%;
+  margin-top: 40%;
+  height: 30%;
+  border: 1px solid red;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  opacity: 1;
+  position: fixed;
+  z-index: 1000;
+}
+
+.promptPhoto {
+  width: 100%;
+  height: 80%;
+  background-image: url(../img/topbg@2x.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.promptWritten {
+  padding-top: 4%;
+  font-size: 42px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}
+
+.promptLong {
+  padding-top: 2%;
+  font-size: 34px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(225, 229, 240, 1);
+  text-align: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.attention{
+  padding-top: 3%;
+  font-size: 34px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(225, 229, 240, 1);
+  text-align: center;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.operationText {
+  width: 50%;
+  font-size: 34px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(134, 142, 165, 1);
+  position: absolute;
+  text-align: center;
+  margin-top: 3%;
+  border-radius: 3px;
+}
+
+.operation {
+  width: 50%;
+  font-size: 34px;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(77, 123, 243, 1);
+  margin-left: 50%;
+  text-align: center;
+  margin-top: 3%;
+  border-radius: 3px;
+}
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none;
+}

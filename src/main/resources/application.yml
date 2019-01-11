@@ -1,0 +1,62 @@
+spring:
+  datasource:
+    url : jdbc:mysql://localhost:3306/test
+    username : root
+    password : root
+    driverClassName : com.mysql.jdbc.Driver
+  freemarker:
+    cache: false
+  messages:
+    basename: i18n/messages,i18n/api
+
+mybatis:
+  "mapper-locations": "classpath*:mybatis/*Mapper.xml"
+
+vena:
+  remote:
+    # url : http://117.139.13.100:8095/
+    # url : http://117.139.13.100:8095/
+    # url : http://47.100.225.40:8095/
+    url : http://47.100.225.40:8095/
+  access:
+    key : bmu4mcnch561oy8cq48jkgrzhik9o0
+  private:
+    key : uv33yub785m9gmorbb3zdftzjllqo8yt8nhi
+  callback:
+    key : 1314a6a2b8894552b1662dcc5f81ee99
+
+tron:
+  remote:
+    #url : https://api.trongrid.io
+    url : http://47.52.47.244:8090
+
+resource:
+  trx:
+    min: 500
+  interval:
+    min: 3
+    max: 30
+  receive:
+    address: TY4KCJNqzpAJGBgbjaZH9XVQ6VfZX8VoWy
+  fee:
+    rate: 1.1
+
+integration:
+  ConnectTimeout : 10000
+  ReadTimeout : 3000
+
+scheduler:
+  detectPaidTx:
+    # 一秒执行一次
+    interval: 1000
+    #interval: 10000
+    loop: 200
+  detectTimeoutTx:
+    # 一分钟执行一次
+    #interval: 60000
+    interval: 1000
+    # 3小时超时
+    limit: 10800000
+  refund:
+    interval: 1000
+    loop: 200

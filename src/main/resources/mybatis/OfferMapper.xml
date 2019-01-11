@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mappers.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.swiftchain.dao.OfferDao">
+	<!-- Result Map -->
+	<resultMap id="baseResultMap" type="cn.swiftchain.dao.po.OfferPO">
+		<result column="offer_no" property="offerNo" />
+		<result column="status" property="status" />
+		<result column="price_trx" property="priceTrx" />
+		<result column="price_vena" property="priceVena" />
+		<result column="start_time" property="startTime" />
+		<result column="end_time" property="endTime" />
+	</resultMap>
+	<!-- offer table all fields -->
+	<sql id="baseColumnList">
+		offer_no,status,price_trx,price_vena,start_time,end_time
+	</sql>
+	<!-- 查询条件 -->
+	<sql id="baseWhereClause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="offerNo != null and offerNo != ''">
+				and offer_no=#{offerNo}
+			</if>
+			<if test="status != null and status != ''">
+				and status=#{status}
+			</if>
+			<if test="priceTrx != null">
+				and price_trx=#{priceTrx}
+			</if>
+			<if test="priceVena != null">
+				and price_vena=#{priceVena}
+			</if>
+			<if test="startTime != null">
+				and start_time=#{startTime}
+			</if>
+			<if test="endTime != null">
+				and end_time=#{endTime}
+			</if>
+		</trim>
+	</sql>
+	<!-- 插入记录 -->
+	<insert id="add" parameterType="Object">
+		insert into
+		offer(offer_no,status,price_trx,price_vena,start_time,end_time)
+		values(#{offerNo},#{status},#{priceTrx},#{priceVena},#{startTime},#{endTime})
+	</insert>
+	<!-- 删除记录 -->
+	<delete id="delete" parameterType="Object">
+		delete from offer where
+		offer_no=#{offerNo}
+	</delete>
+	<!-- 根据id查询 -->
+	<select id="queryById" resultMap="baseResultMap" parameterType="Object">
+		select
+		<include refid="baseColumnList" />
+		from offer where offer_no=#{offerNo}
+	</select>
+	<!-- 列表总数 -->
+	<select id="queryByCount" resultType="java.lang.Integer"
+		parameterType="Object">
+		select count(1) from offer
+		<include refid="baseWhereClause" />
+	</select>
+	<!-- 查询列表 -->
+	<select id="queryByList" resultMap="baseResultMap"
+		parameterType="Object">
+		select
+		<include refid="baseColumnList" />
+		from offer
+		<include refid="baseWhereClause" />
+	</select>
+	<!-- 以上为工具自动生成 -->
+
+	<select id="queryByOfferNo" resultMap="baseResultMap" parameterType="Object">
+		select
+		<include refid="baseColumnList" />
+		from `offer`
+		where offer_no in
+		<foreach collection="offerNoSet" index="index" item="item" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</select>
+
+	<update id="updateStatus" parameterType="object">
+        update `offer` set status=#{to}
+        where offer_no = #{offerNo} and status=#{from}
+    </update>
+
+</mapper>
